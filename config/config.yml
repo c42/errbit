@@ -9,14 +9,14 @@
 # You will need to restart the server after changing any settings.
 
 # The host of your errbit server
-host: errbit.example.com
+host: errbit.c42.in
 
 # Enforce SSL connections
 enforce_ssl: false
 
 # The email address which email notifications
 # will be sent from.
-email_from: errbit@example.com
+email_from: errbit@c42.in
 
 # If you turn on this option, email_at_notices can be
 # configured on a per app basis, at the App edit page
@@ -42,12 +42,12 @@ allow_comments_with_issue_tracker: true
 # Setup your deploy options for capistrano.
 deployment:
   hosts:
-    web: errbit.example.com
-    app: errbit.example.com
-    db: errbit.example.com
-  repository: http://github.com/errbit/errbit.git
-  user: deploy
-  deploy_to: /var/www/apps/errbit
+    web: errbit.c42.in
+    app: errbit.c42.in
+    db: errbit.c42.in
+  repository: http://github.com/c42/errbit.git
+  user: errbit
+  deploy_to: /var/www/errbit
 
 # GitHub OAuth configuration
 # If you want to allow authentication via GitHub, you will need to register
@@ -70,12 +70,12 @@ github_access_scope: ['repo']
 # Configure SMTP settings. If you are running Errbit on Heroku,
 # sendgrid will be configured by default.
 # ------------------------------------------------------------------------
-#smtp_settings:
-#  :address:              ADDRESS
+smtp_settings:
+  :address:              c42.in
 #  :domain:               DOMAIN
 #  :port:                 "25"
-#  :authentication:       :plain, :login, :cram_md5
-#  :enable_starttls_auto: true
-#  :user_name:            USERNAME
-#  :password:             PASSWORD
+  :authentication:       :login #:plain, :login, :cram_md5
+  :enable_starttls_auto: true
+  :user_name:            errbit@c42.in
+  :password:             <%= ENV['ERRBIT_EMAIL_PASSWORD'] %>
 

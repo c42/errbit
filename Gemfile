@@ -43,6 +43,7 @@ gem 'yajl-ruby'
 group :development, :test do
   gem 'rspec-rails', '~> 2.6'
   gem 'webmock', :require => false
+  gem 'capistrano'
   unless ENV["CI"]
     gem 'ruby-debug', :platform => :mri_18
     gem 'debugger', :platform => :mri_19
