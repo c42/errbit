@@ -70,12 +70,13 @@ github_access_scope: ['repo']
 # Configure SMTP settings. If you are running Errbit on Heroku,
 # sendgrid will be configured by default.
 # ------------------------------------------------------------------------
+
 smtp_settings:
-  :address:              c42.in
-#  :domain:               DOMAIN
-#  :port:                 "25"
-  :authentication:       :login #:plain, :login, :cram_md5
-  :enable_starttls_auto: false
-  :user_name:            errbit@c42.in
-  :password:             <%= ENV['ERRBIT_EMAIL_PASSWORD'] %>
+  :address:              smtp.gmail.com
+  :port:                 587
+  :domain:               c42.in
+  :authentication:       :plain
+  :enable_starttls_auto: true
+  :user_name:
+  :password:
 
