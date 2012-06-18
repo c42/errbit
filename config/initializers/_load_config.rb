@@ -61,6 +61,7 @@ if smtp = Errbit::Config.smtp_settings
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = smtp
 end
+ActionMailer::Base.delivery_method = :sendmail # oh, hi. [sd]
 
 # Set config specific values
 (ActionMailer::Base.default_url_options ||= {}).tap do |default|
